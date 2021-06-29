@@ -7,7 +7,7 @@ function validateProp(value, type, message) {
             hasError = value.trim() === '';
         } else if (type === 'array') {
             hasError = value.length === 0;
-        } else if (type === number) {
+        } else if (type === 'number') {
             hasError = value <= 0;
         }
     }

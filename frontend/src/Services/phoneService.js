@@ -6,14 +6,6 @@ export function getPhones() {
         }
     })
         .then(res => res.json())
-        // .then(
-        //     (result) => {
-        //         return result;
-        //     },
-        //     (error) => {
-        //         return error;
-        //     }
-        // );
 
     return result;
 }

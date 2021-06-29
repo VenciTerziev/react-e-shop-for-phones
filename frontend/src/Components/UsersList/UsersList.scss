@@ -1,0 +1,58 @@
+@import "/src/globalVariables";
+
+.UsersList-container {
+    width: 100%;
+    border: 2px solid $gray;
+    box-sizing: border-box;
+
+    table {
+        width: 100%;
+        text-align: left;
+
+        thead tr::after {
+            content: "";
+            width: 100%;
+            height: 2px;
+            background-color: $gray;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        th,
+        td {
+            padding-left: 0.75em;
+
+            &:not(:last-child) {
+                border-right: 2px solid $gray;
+            }
+        }
+
+        tr {
+            height: 40px;
+            position: relative;
+
+            &:not(:last-child)::after {
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: $gray;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+
+        .col-3 {
+            width: calc(100% / 12 * 3);
+        }
+
+        .col-2 {
+            width: calc(100% / 12 * 2);
+        }
+
+        .link {
+            cursor: pointer;
+        }
+    }
+}

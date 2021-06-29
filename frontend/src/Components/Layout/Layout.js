@@ -5,13 +5,14 @@ import Home from "../../Pages/Home";
 import Phones from "../../Pages/Phones/Phones";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
-import { clearAuth } from '../../Services/userService';
+import Admin from "../../Pages/Admin/Admin";
+import { clearAuth, getUserId } from '../../Services/userService';
 import './Layout.scss'
 
 // export default class Layout extends Component {
 export default function Layout() {
     // const logged = this.props.loggedIn;
-    const [logged, handleLogin] = useState(false);
+    const [logged, handleLogin] = useState(!!getUserId());
 
     function handleLogout() {
         clearAuth();
@@ -33,6 +34,9 @@ export default function Layout() {
                         </Route>
                         <Route path="/phones">
                             <Phones />
+                        </Route>
+                        <Route path="/Admin">
+                            <Admin />
                         </Route>
                         <Route path="/">
                             <Home />
