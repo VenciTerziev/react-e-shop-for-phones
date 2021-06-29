@@ -1,0 +1,13 @@
+#mainWrapper {
+    position: relative;
+    max-width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+
+    .content-container {
+        position: relative;
+        padding: 0 50px;
+        margin: 50px 0;
+        min-height: 60vh;
+    }
+}

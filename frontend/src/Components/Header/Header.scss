@@ -1,0 +1,42 @@
+.Header {
+    height: 60px;
+    background-color: #fff;
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0px -2px 20px rgba(0, 0, 0, 0.75);
+
+    &-Left {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    &-Right {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+
+    &-Item {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin: 0 10px;
+
+        a {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+    
+    &-Logo {
+        height: 100%;
+    }
+}
