@@ -20,8 +20,9 @@ reviewRouter.get('/', async (req, res) => {
 reviewRouter.post('/', validateJWT, async (req, res) => {
     const reviewBody = req.body;
     const userId = reviewBody.userId;
-    const reviewsCollection = req.app.locals.db.collection('reviews')
-    reviewsCollection.findOne({ _id: new mongodb.ObjectID(userId) }, function (error, user) {
+
+    const usersCollection = req.app.locals.db.collection('users')
+    usersCollection.findOne({ _id: new mongodb.ObjectID(userId) }, function (error, user) {
         if (error) {
             sendErrorResponse(req, res, 500, `server error`, error)
             return false
@@ -102,8 +103,8 @@ reviewRouter.patch('/:reviewId', validateJWT, async (req, res) => {
     }
 })
 
-reviewRouter.delete('/:reiewId', validateJWT, async (req, res) => {
-    const reviewId = req.params.reviewId
+reviewRouter.delete('/:reviewId', validateJWT, async (req, res) => {
+    const reviewId = req.params.reviewId;
 
     if (!isValidId(reviewId)) {
         return sendErrorResponse(req, res, 400, `invalid review data`, new Error('invalid review id'))

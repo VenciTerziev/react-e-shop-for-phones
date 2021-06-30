@@ -6,7 +6,7 @@ export default function ReviewComponent(props) {
         <div className="review-holder">
                 <h3>{props.data.title}</h3>
                 <div>{props.data.postedOn}</div>
-                <p>{props.data.description}</p>
+                <p>{props.data.shortDescription}</p>
         </div>
     )
 }

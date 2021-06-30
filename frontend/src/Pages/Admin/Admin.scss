@@ -1,6 +1,10 @@
 .Admin-container {
     .nav {
-        margin: 25px 0;
+        margin: 25px 0 50px;
         padding: 0 5px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 1.1em;
     }
 }

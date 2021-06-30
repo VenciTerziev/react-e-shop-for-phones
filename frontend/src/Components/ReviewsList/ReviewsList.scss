@@ -1,0 +1,131 @@
+@import "/src/globalVariables";
+
+.ReviewsList-container {
+    width: 100%;
+    border: 2px solid $gray;
+    box-sizing: border-box;
+
+    table {
+        width: 100%;
+        text-align: left;
+
+        thead tr::after {
+            content: "";
+            width: 100%;
+            height: 2px;
+            background-color: $gray;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        th,
+        td {
+            padding-left: 0.75em;
+            display: inline-block;
+            height: 50px;
+            overflow: hidden;
+            box-sizing: border-box;
+
+            &:not(:last-child) {
+                border-right: 2px solid $gray;
+            }
+        }
+
+        tr {
+            height: 50px;
+            position: relative;
+
+            &:not(:last-child)::after {
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: $gray;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+
+        .col-3 {
+            width: calc(100% / 12 * 3);
+        }
+
+        .col-2 {
+            width: calc(100% / 12 * 2);
+        }
+
+        .link {
+            cursor: pointer;
+        }
+    }
+
+    .modal {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0%;
+        top: 0%;
+
+        &.hidden {
+            display: none;
+            opacity: 0;
+        }
+
+        &.shown {
+            display: block;
+            opacity: 1;
+        }
+
+        form {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            width: 80%;
+            height: auto;
+            background: white;
+            padding: 20px 30px;
+            box-sizing: border-box;
+            transform: translateY(-50%);
+
+            h2 {
+                margin-bottom: 40px;
+            }
+
+            .button {
+                margin: 15px 0;
+                font-size: 1.2em;
+                color: #fff;
+                border-radius: 3px;
+                padding: 10px 30px;
+                float: right;
+                outline: 0;
+                border: 0;
+                cursor: pointer;
+                width: auto;
+            }
+
+            .close-modal {
+                position: absolute;
+                top: 15px;
+                right: 30px;
+                font-size: 2em;
+                cursor: pointer;
+                color: $black;
+                opacity: 0.8;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: $black;
+            opacity: 0.75;
+            z-index: -1;
+        }
+    }
+}

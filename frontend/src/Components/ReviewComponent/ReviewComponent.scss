@@ -1,25 +1,15 @@
 @import "/src/globalVariables";
 
-.phone-holder {
+.review-holder {
     width: 25%;
-    height: 400px;
+    height: auto;
     border: 2px solid $gray;
     cursor: pointer;
-    padding: 10px;
+    padding: 15px;
     box-sizing: border-box;
-
-    * {
-        margin: 0;
-    }
+    display: inline-block;
 
     h3 {
         font-size: 1.25em;
-    }
-
-    p {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        width: 100%;
     }
 }

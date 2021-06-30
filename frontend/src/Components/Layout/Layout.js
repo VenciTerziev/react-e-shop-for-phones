@@ -5,6 +5,7 @@ import Home from "../../Pages/Home";
 import Phones from "../../Pages/Phones/Phones";
 import Phone from "../../Pages/Phone/Phone";
 import Reviews from "../../Pages/Reviews/Reviews";
+import Review from "../../Pages/Review/Review";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
 import Profile from "../../Pages/Profile/Profile";
@@ -46,6 +47,9 @@ export default function Layout() {
                         </Route>
                         <Route path="/reviews">
                             <Reviews />
+                        </Route>
+                        <Route path="/review/:reviewId">
+                            <Review />
                         </Route>
                         <Route path="/Admin">
                             <Admin />

@@ -71,10 +71,10 @@ export default function PhonesList(props) {
         }
     }
 
-    function deletePhoneDialog(id) {
+    async function deletePhoneDialog(id) {
         var r = window.confirm("Confirm delete");
         if (r === true) {
-            deletePhone(id);
+            await deletePhone(id);
             updateList();
         }
     }
