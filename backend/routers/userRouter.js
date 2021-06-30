@@ -81,7 +81,7 @@ userRouter.patch('/:userId', validateJWT, async (req, res) => {
     }
 
     try {
-        let user = new User(userBody.username, userBody.fullname, userBody.email, userBody.password);
+        let user = new User(userBody.username, userBody.fullname, userBody.email, userBody.password, userBody.role, true);
         delete user.password;
 
         try {

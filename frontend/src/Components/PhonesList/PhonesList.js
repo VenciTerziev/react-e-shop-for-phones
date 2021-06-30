@@ -54,6 +54,10 @@ export default function PhonesList(props) {
             'price': formData.get('price') - 0,
         }
 
+        formData.forEach(function(val, key, fD){
+            formData.delete(key)
+        });
+
         let result = false;
         if (modalType === 'add') {
             result = await addPhone(data);

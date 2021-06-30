@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getPhones } from '../../Services/phoneService';
 import './Phones.scss'
 import PhoneComponent from '../../Components/PhoneComponent/PhoneComponent';
+import { Link } from "react-router-dom";
 
 export default function Phones(props) {
     const [phones, setPhones] = useState([]);
@@ -29,32 +30,8 @@ export default function Phones(props) {
         <div className="Phones-container">
             <h1>Phones</h1>
             <div className="phone-grid">
-                {phones.map(p => <PhoneComponent key={p.id} data={p}/>)}
+                {phones.map(p =>  <Link to={`/phone/${p.id}`} key={p.id}><PhoneComponent data={p}/></Link> )}
             </div>
         </div>
     )
 }
-
-// function getPhones(isMounted, setIsLoaded, setCourses, setError) {
-
-    
-//     send({
-//         url: 'http://localhost:8080/api/courses',
-//         method: 'GET',
-//         headers: new Headers({
-//             'Authorization': `Bearer ${getAccessToken()}`
-//         }),
-//         data: null,
-//         expectedStatusCode: 200
-//     }, (result) => {
-//         if (isMounted) {
-//             setCourses(result);
-//             setIsLoaded(true);
-//         }
-//     }, (error) => {
-//         if (isMounted) {
-//             setError(error);
-//             setIsLoaded(true);
-//         }
-//     })
-// }

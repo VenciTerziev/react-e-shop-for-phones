@@ -1,0 +1,39 @@
+@import "/src/globalVariables";
+
+.Phone-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 25px;
+    box-sizing: border-box;
+    height: 600px;
+
+    .left {
+        height: 100%;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .right {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: 80%;
+        top: 10%;
+
+        * {
+            margin: 0;
+        }
+
+        b {
+            color: $purple;
+            font-size: 1.4em;
+        }
+    }
+
+}

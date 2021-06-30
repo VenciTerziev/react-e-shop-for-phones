@@ -12,6 +12,18 @@ export function getPhones() {
     return result;
 }
 
+export function getPhone(id) {
+    const result = fetch(`http://localhost:8080/api/phones/${id}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(res => res.json())
+
+    return result;
+}
+
 export function addPhone(data) {
     const result = fetch('http://localhost:8080/api/phones', {
         method: 'POST',
