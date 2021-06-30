@@ -30,6 +30,9 @@ export default class Header extends Component {
                     <Link className="Header-Item" to='/phones'>
                             <i className="icon fas fa-mobile"></i>Phones
                     </Link>
+                    <Link className="Header-Item" to='/reviews'>
+                        <i className="icon fas fa-mobile"></i>Reviews
+                    </Link>
                 </div>
 
                 <div className="Header-Right">

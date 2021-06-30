@@ -9,6 +9,8 @@ function validateProp(value, type, message) {
             hasError = value.length === 0;
         } else if (type === 'number') {
             hasError = value <= 0;
+        } else if (type === 'dateTime') {
+            hasError = value <= 0;
         }
     }
 

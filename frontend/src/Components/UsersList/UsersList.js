@@ -31,9 +31,8 @@ export default function UsersList(props) {
                     <tr>
                         <th className="col-3">Username</th>
                         <th className="col-3">Fullname</th>
-                        <th className="col-2">Role</th>
+                        <th className="col-3">Email</th>
                         <th className="col-2">Promote</th>
-                        <th className="col-2">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,13 +40,12 @@ export default function UsersList(props) {
                         return <tr key={u.username}>
                             <td className="col-3">{u.username}</td>
                             <td className="col-3">{u.fullname}</td>
-                            <td className="col-2">{u.role}</td>
+                            <td className="col-2">{u.email}</td>
                             {
                                 u.role === 'admin'
-                                     ? <td className="col-2 link green">Set to user <i class="fas fa-arrow-down"></i> </td>
-                                    : <td className="col-2 link green">Set to admin <i class="fas fa-arrow-up"></i></td>
+                                     ? <td className="col-2 link green">Set to user <i className="fas fa-arrow-down"></i> </td>
+                                    : <td className="col-2 link green">Set to admin <i className="fas fa-arrow-up"></i></td>
                             }
-                            <td className="col-2 link red">Delete <i class="fas fa-trash-alt"></i></td>
                         </tr>
                     })}
                 </tbody>

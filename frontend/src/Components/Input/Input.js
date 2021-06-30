@@ -5,10 +5,17 @@ export default function Input(props) {
     return (
         <div className="input-holder">
             <label htmlFor={props.id}>{props.placeholder}</label>
-            <input
-                {...props}
-                placeholder=""
-            />
+            { props.type === "textarea" ?
+                 <textarea
+                 {...props}
+                 placeholder=""
+                ></textarea>
+                :
+                <input
+                    {...props}
+                    placeholder=""
+                />
+            }
         </div>
     )
 }

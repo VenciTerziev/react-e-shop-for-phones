@@ -39,8 +39,8 @@ export default function Login(props) {
                 <span>or log in with</span>
             </div>
             <div className="logosHolder">
-                <img src="https://image.flaticon.com/icons/png/512/124/124010.png" alt="fb icon" className="logo"/>
-                <img src="https://cdn.icon-icons.com/icons2/2631/PNG/512/google_search_new_logo_icon_159150.png" alt="google icon"  className="logo"/>
+                <img src="http://localhost:3000/img/fb_icon.png" alt="fb icon" className="logo"/>
+                <img src="http://localhost:3000/img/google_icon.png" alt="google icon"  className="logo"/>
             </div>
         </div>
     )

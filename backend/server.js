@@ -3,6 +3,7 @@ const { sendErrorResponse } = require('./errors')
 const authRouter = require('./routers/authRouter')
 const userRouter = require('./routers/userRouter')
 const phoneRouter = require('./routers/phoneRouter')
+const reviewRouter = require('./routers/reviewRouter')
 const { connect } = require('./storage/db')
 const cors = require('cors')
 
@@ -19,6 +20,7 @@ app.use(express.json())
 app.use('/api', authRouter)
 app.use('/api/users', userRouter)
 app.use('/api/phones', phoneRouter)
+app.use('/api/reviews', reviewRouter)
 
 app.use(function (err, req, res, next) {
     console.error(err.stack)

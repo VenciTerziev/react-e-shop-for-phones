@@ -45,7 +45,7 @@ phoneRouter.post('/', validateJWT, async (req, res) => {
 
         try {
             phone = await createPhone(PhoneCollection(req), phone)
-            res.status(201).location(`/api/Phoness/${phone.id}`).json(phone)
+            res.status(201).location(`/api/phones/${phone.id}`).json(phone)
         } catch (err) {
             if (err.message && err.message.includes('E11000')) {
                 return sendErrorResponse(req, res, 409, `Phones already exists`, err)

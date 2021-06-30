@@ -25,11 +25,9 @@ userRouter.get('/', validateJWT, async (req, res) => {
 
 userRouter.post('/', async (req, res) => {
     const userBody = req.body
-    console.log(req.body);
     
     try {
-        console.log(userBody);
-        let user = new User(userBody.username, userBody.fullname, userBody.password)
+        let user = new User(userBody.username, userBody.fullname, userBody.email, userBody.password)
         user.role = 'user';
 
         try {
@@ -83,17 +81,8 @@ userRouter.patch('/:userId', validateJWT, async (req, res) => {
     }
 
     try {
-        await validateCourseIds(userBody.courseIds, coursesCollection(req))
-    } catch (err) {
-        return sendErrorResponse(req, res, 400, `invalid user data`, err)
-    }
-
-    try {
-        const courseIds = userBody.courseIds.map(c => new ObjectID(c))
-        let user = new User(userBody.username, userBody.githubUsername, userBody.fullname,
-            userBody.password, userBody.permissions, courseIds).removeEmptyFields()
-        delete user.password
-        user.validatePatch()
+        let user = new User(userBody.username, userBody.fullname, userBody.email, userBody.password);
+        delete user.password;
 
         try {
             user = await updateUser(usersCollection(req), userId, user)
@@ -127,24 +116,6 @@ userRouter.delete('/:userId', validateJWT, async (req, res) => {
 
 function usersCollection(req) {
     return req.app.locals.db.collection('users')
-}
-
-function coursesCollection(req) {
-    return req.app.locals.db.collection('courses')
-}
-
-async function validateCourseIds(courseIds, coursesCollection) {
-    if (!courseIds || courseIds.length === 0) return
-
-    const exist = []
-    courseIds.forEach(c => {
-        exist.push(isExistingId(c, coursesCollection, 'course'))
-    })
-    try {
-        await Promise.all(exist)
-    } catch (err) {
-        throw err
-    }
 }
 
 module.exports = userRouter

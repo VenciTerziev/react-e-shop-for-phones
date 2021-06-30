@@ -35,12 +35,12 @@ export async function loginService(data) {
             (result) => {
                 authenticate(result);
                 return true;
-            },
-            (error) => {
-                console.log(error);
-                return false;
             }
-        );
+        )
+        .catch((error) => {
+            console.error('Error:', error);
+            return false;
+        });
 
     return result;
 }
