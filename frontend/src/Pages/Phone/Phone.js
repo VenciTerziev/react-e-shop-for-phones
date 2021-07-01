@@ -35,7 +35,7 @@ export default function Phones(props) {
                 <h3>{phone.name}</h3>
                 <p>{phone.description}</p>
                 <b>{phone.price} лв.</b>
-                <button className="button">Добави в количка</button>
+                <button className="button">Add to cart</button>
             </div>
         </div>
     )
